@@ -130,13 +130,19 @@ set hlsearch
 nmap <leader>hl :let @/ = ""<CR>
 
 " gui settings
-if (&t_Co == 256 || has('gui_running'))
-  if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
-  else
-    colorscheme desert
-  endif
-endif
+" if (&t_Co == 256 || has('gui_running'))
+"   if ($TERM_PROGRAM == 'iTerm.app')
+"     colorscheme solarized
+"   else
+"     colorscheme desert
+"   endif
+" endif
+
+" sane highlighting for vimdiff
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 " Go crazy!
 " if filereadable(expand("~/.vimrc.local"))
