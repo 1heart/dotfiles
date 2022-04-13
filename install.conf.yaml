@@ -11,5 +11,6 @@
     ~/.vimrc.bundles: vimrc.bundles
     ~/.vimrc.bundles.local: vimrc.bundles.local
     ~/.gemrc: gemrc
+    ~/.p10k.zsh: p10k.zsh
 
 
