@@ -157,3 +157,6 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 "   " noremap! jj <ESC>
    source ~/.vimrc.local
 " endif
+
+let g:tex_flavor = 'latex'
+
