@@ -1,0 +1,4 @@
+#!/bin/zsh
+SESSION="et-default-session"
+ETPORT=8080
+et mydevfair:$ETPORT -v 1 --jport 8080 -t "2022:22,15900:5900,16006-16009:6006-6009,18888:8888" -c "tmux attach-session -d -t $SESSION || tmux new-session -s $SESSION"

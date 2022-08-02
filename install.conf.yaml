@@ -23,3 +23,7 @@
     ~/.local/bin/vnc_start:
       create: true
       path: vnc_start
+
+    ~/.local/bin/vnc_start:
+      create: true
+      path: devfair
