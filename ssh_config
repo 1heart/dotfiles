@@ -1,0 +1,162 @@
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 240
+
+Host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/github
+  User git
+
+Host shellserver
+  HostName shellserver004.ash9.facebook.com
+
+Host fre-robodev
+  ProxyJump shellserver
+  IdentityFile ~/.ssh/fb_id_rsa
+  HostName 2620:10d:c0b9:4b05:6d9:f5ff:fe63:f227
+  LocalForward 35900 localhost:5900
+
+Host fre-nuc
+  ProxyJump shellserver
+  HostName 2620:10d:c0b9:4b05:edd9:318a:ebeb:2b32
+  IdentityFile ~/.ssh/fb_id_rsa
+  DynamicForward 1337
+
+Host *-fairjmp*
+  IdentityFile ~/.ssh/fb_id_rsa
+
+Host mydevfair
+  IdentityFile ~/.ssh/fb_id_rsa
+  ### Santa Clara, CA ###
+  # ProxyJump snc-fairjmp
+  # ProxyJump snc-fairjmp101
+  # ProxyJump snc-fairjmp102
+  # ProxyJump snc-fairjmp201
+  # ProxyJump snc-fairjmp202
+  ### Ashburn, VA ###
+  # ProxyJump ash-fairjmp
+  # ProxyJump ash-fairjmp101
+  # ProxyJump ash-fairjmp102
+  # ProxyJump ash-fairjmp201
+  ProxyJump ash-fairjmp202
+
+# devfair0277
+Host mydevfair
+  HostName 100.97.72.76  # Yixin's
+  # HostName 100.97.69.78  # Akshara's
+  LocalForward 2022 localhost:22
+  LocalForward 15900 localhost:5900
+  LocalForward 16006 localhost:6006
+  LocalForward 18888 localhost:8888
+  RemoteForward 6667 localhost:6667
+  ForwardX11 yes
+
+Host mydevfair-vs
+  HostName localhost
+  Port 2022
+
+# Host myrobodev-wlan
+#   HostName 71.202.99.193
+#   LocalForward 35900 localhost:5900
+
+# Host nuc-wlan
+#   HostName 71.202.99.193
+#   Port 9870
+#   LocalForward 25900 localhost:5900
+#   # Squid proxy port
+#   LocalForward 3128 localhost:3128
+
+Host devserver
+  HostName devvm5212.frc0.facebook.com
+  IdentityFile ~/.ssh/fb_id_rsa
+
+Host robomonitor*
+  ProxyJump shellserver
+  IdentityFile ~/.ssh/fb_id_rsa
+  User robodev
+
+Host robomonitor00
+  # HostName 100.65.42.62
+  HostName 2620:10d:c0ba:1306:7e10:c9ff:fe43:66b0
+
+Host robomonitor01
+  HostName 2620:10d:c0ba:1306:c46a:ec56:6ed8:6da7
+
+Host robopen*
+  ProxyJump robomonitor00
+  IdentityFile ~/.ssh/fb_id_rsa
+  DynamicForward 1337
+  LocalForward 35900 localhost:5900
+  StrictHostKeyChecking no
+
+Host robopen00
+  HostName 10.0.0.100
+  User robopen00
+
+Host robopen01
+  HostName 10.0.0.101
+  User robopen01
+Host robopen02
+  HostName 10.0.0.102
+  User robopen02
+Host robopen03
+  HostName 10.0.0.103
+  User robopen03
+Host robopen04
+  HostName 10.0.0.104
+  User robopen04
+Host robopen05
+  HostName 10.0.0.105
+  User robopen05
+Host robopen06
+  HostName 10.0.0.106
+  User robopen06
+Host robopen07
+  HostName 10.0.0.107
+  User robopen07
+
+Host mpk-nuc
+  # HostName panda-nuc-001
+  HostName 2620:10d:c0be:240f:3536:6c2e:a34e:b8f2
+  User yixinlin
+  DynamicForward 1337
+  ProxyJump devserver
+
+Host mpk-robodev
+  HostName 2620:10d:c0be:240f:4216:7eff:fea5:1509
+  User yixinlin
+  ProxyJump devserver
+  IdentityFile ~/.ssh/fb_id_rsa
+
+Host mpk-perception
+  # HostName 2620:10d:c0be:240f:5ccd:1328:d0ea:7b77
+  HostName 2620:10d:c0be:240f::2d6a
+  User yixinlin
+  ProxyJump devserver
+  IdentityFile ~/.ssh/fb_id_rsa
+
+Host nyc-nuc
+  # HostName yixin-nuc-20
+  HostName 100.67.224.116
+  IdentityFile ~/.ssh/id_rsa
+  # LocalForward 25900 localhost:5900
+  # LocalForward 8050 localhost:8050
+  # LocalForward 50051 localhost:50051
+  DynamicForward 1337
+
+Host nyc-robodev
+  HostName 100.64.147.13
+  IdentityFile ~/.ssh/id_rsa
+  LocalForward 35900 localhost:5900
+
+
+Host redesign
+  HostName kras-gpu-server.tenant-redesign.coreweave.cloud
+  User yixin
+  IdentityFile ~/.ssh/id_rsa
+
+Host chris-robodev
+  HostName 100.101.228.83
+  User yixin
+  LocalForward 35900 localhost:5900
