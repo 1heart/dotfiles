@@ -1,11 +1,10 @@
 Host *
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
   ServerAliveInterval 240
 
 Host github.com
   HostName github.com
-  IdentityFile ~/.ssh/github
   User git
 
 Host shellserver
@@ -13,21 +12,15 @@ Host shellserver
 
 Host fre-robodev
   ProxyJump shellserver
-  IdentityFile ~/.ssh/fb_id_rsa
   HostName 2620:10d:c0b9:4b05:6d9:f5ff:fe63:f227
   LocalForward 35900 localhost:5900
 
 Host fre-nuc
   ProxyJump shellserver
   HostName 2620:10d:c0b9:4b05:edd9:318a:ebeb:2b32
-  IdentityFile ~/.ssh/fb_id_rsa
   DynamicForward 1337
 
-Host *-fairjmp*
-  IdentityFile ~/.ssh/fb_id_rsa
-
 Host mydevfair
-  IdentityFile ~/.ssh/fb_id_rsa
   ### Santa Clara, CA ###
   # ProxyJump snc-fairjmp
   # ProxyJump snc-fairjmp101
@@ -69,11 +62,9 @@ Host mydevfair-vs
 
 Host devserver
   HostName devvm5212.frc0.facebook.com
-  IdentityFile ~/.ssh/fb_id_rsa
 
 Host robomonitor*
   ProxyJump shellserver
-  IdentityFile ~/.ssh/fb_id_rsa
   User robodev
 
 Host robomonitor00
@@ -85,7 +76,6 @@ Host robomonitor01
 
 Host robopen*
   ProxyJump robomonitor00
-  IdentityFile ~/.ssh/fb_id_rsa
   DynamicForward 1337
   LocalForward 35900 localhost:5900
   StrictHostKeyChecking no
@@ -127,19 +117,16 @@ Host mpk-robodev
   HostName 2620:10d:c0be:240f:4216:7eff:fea5:1509
   User yixinlin
   ProxyJump devserver
-  IdentityFile ~/.ssh/fb_id_rsa
 
 Host mpk-perception
   # HostName 2620:10d:c0be:240f:5ccd:1328:d0ea:7b77
   HostName 2620:10d:c0be:240f::2d6a
   User yixinlin
   ProxyJump devserver
-  IdentityFile ~/.ssh/fb_id_rsa
 
 Host nyc-nuc
   # HostName yixin-nuc-20
   HostName 100.67.224.116
-  IdentityFile ~/.ssh/id_rsa
   # LocalForward 25900 localhost:5900
   # LocalForward 8050 localhost:8050
   # LocalForward 50051 localhost:50051
@@ -147,14 +134,12 @@ Host nyc-nuc
 
 Host nyc-robodev
   HostName 100.64.147.13
-  IdentityFile ~/.ssh/id_rsa
   LocalForward 35900 localhost:5900
 
 
 Host redesign
   HostName kras-gpu-server.tenant-redesign.coreweave.cloud
   User yixin
-  IdentityFile ~/.ssh/id_rsa
 
 Host chris-robodev
   HostName 100.101.228.83
