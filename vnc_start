@@ -1,0 +1,10 @@
+#!/bin/bash
+
+Xvfb :100 -screen 0 1024x768x24 &
+XVFB_PID=$!
+
+DISPLAY=:100 "$@" &
+x11vnc  -display :100
+
+kill -15 $XVFB_PID
+

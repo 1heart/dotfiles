@@ -15,3 +15,11 @@
     ~/.gemrc: gemrc
     ~/.ssh/config: ssh_config
     ~/.p10k.zsh: p10k.zsh
+
+    ~/.local/bin/tmux_attach_or_create.sh:
+      create: true
+      path: tmux_attach_or_create.sh
+
+    ~/.local/bin/vnc_start:
+      create: true
+      path: vnc_start
