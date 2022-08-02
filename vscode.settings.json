@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "tmux_attach_or_create": {
+            "path": "/home/yixinlin/bin/tmux_attach_or_create.sh",
+            "icon": "terminal-tmux"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "tmux_attach_or_create"
+}

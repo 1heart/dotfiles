@@ -10,19 +10,19 @@ set nocompatible
 " enable syntax highlighting
 syntax enable
 
-" configure Vundle
-filetype on " without this vim emits a zero exit status, later, because of :ft off
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" " configure Vundle
+" filetype on " without this vim emits a zero exit status, later, because of :ft off
+" filetype off
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 
-" install Vundle bundles
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-  source ~/.vimrc.bundles.local
-endif
+" " install Vundle bundles
+" if filereadable(expand("~/.vimrc.bundles"))
+"   source ~/.vimrc.bundles
+"   source ~/.vimrc.bundles.local
+" endif
 
-call vundle#end()
+" call vundle#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -157,3 +157,6 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 "   " noremap! jj <ESC>
    source ~/.vimrc.local
 " endif
+
+let g:tex_flavor = 'latex'
+
