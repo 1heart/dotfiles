@@ -24,3 +24,5 @@
 	defaultBranch = main
 [color]
 	ui = auto
+[merge]
+        directoryRenames = true
