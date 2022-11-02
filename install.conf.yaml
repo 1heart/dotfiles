@@ -27,3 +27,7 @@
     ~/.local/bin/devfair:
       create: true
       path: devfair
+
+    ~/.local/bin/gdown.sh:
+      create: true
+      path: gdown.sh
