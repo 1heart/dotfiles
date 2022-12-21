@@ -100,3 +100,9 @@ source $HOME/.zshrc.local
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias gbage='for k in $(git branch -r | \
+  perl -pe '\''s/^..(.*?)( ->.*)?$/\1/'\''); \
+  do echo -e $(git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k -- | \
+     head -n 1)\\t$k; done | sort'
+
