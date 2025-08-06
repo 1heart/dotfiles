@@ -1,16 +1,10 @@
-[alias]
-	b = branch
-	ci = commit
-	st = status
-	co = checkout
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[core]
-	excludesfile = /Users/yixin/.gitignore
-[push]
-	default = simple
 [user]
 	name = 1heart
 	email = yixin1996@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
+[push]
+	default = simple
+	autoSetupRemote = true
 [credential]
 	helper = store
 [filter "lfs"]
@@ -26,3 +20,7 @@
 	ui = auto
 [merge]
         directoryRenames = true
+[gpg]
+	format = ssh
+[commit]
+	sshsign = true
